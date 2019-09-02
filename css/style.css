@@ -1,0 +1,142 @@
+/* Base */
+
+body {
+  color: #022f42;
+  height: 100vh;
+  font-family: 'Montserrat';
+
+}
+
+a {
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease;
+}
+
+a:hover {
+  text-decoration: none;
+}
+.btn.btn-xs:hover{
+  background-color: rgb(227, 165, 119);
+}
+
+.btn {
+  text-transform: uppercase;
+  position: relative;
+  -webkit-transition: 0.2s all ease-in-out !important;
+  -o-transition: 0.2s all ease-in-out !important;
+  transition: 0.2s all ease-in-out !important;
+  top: 0;
+  letter-spacing: .05em;
+}
+
+.btn.btn-sm {
+  font-size: 14px !important;
+  padding: 10px 20px !important;
+}
+
+.btn.btn-sm:hover {
+  color: white;
+}
+
+.btn:hover, .btn:active, .btn:focus {
+  outline: none;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.btn:hover {
+  -webkit-box-shadow: 0 5px 20px -7px rgba(0, 0, 0, 0.9) !important;
+  box-shadow: 0 5px 20px -7px rgba(0, 0, 0, 0.9) !important;
+  top: -2px;
+}
+
+.form-control {
+  height: 43px;
+}
+
+.form-control:active, .form-control:focus {
+  border-color: #022f42;
+}
+
+.form-control:hover, .form-control:active, .form-control:focus {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.site-footer {
+  padding: 3em 0;
+}
+
+.site-footer ul li {
+  margin-bottom: 10px;
+}
+
+.site-footer ul li a {
+  color: #5c626e;
+}
+
+.site-footer ul li a:hover {
+  color: #022f42;
+}
+
+.site-footer .footer-heading {
+  font-size: 20px;
+  color: #25262a;
+}
+
+.block-7 .form-group {
+  position: relative;
+}
+
+.block-7 .form-control {
+  padding-right: 96px;
+}
+
+.block-7 .btn {
+  position: absolute;
+  width: 80px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 3px;
+}
+
+.tint {
+  position: relative;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, .2) 3px 5px 5px;
+
+}
+
+.tint:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: all .3s linear;
+}
+
+.tint:hover:before {
+  background: none;
+}
+
+.tint:before {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.parallax {
+  background-image: url(../images/2.jpg);
+  height: 350px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
