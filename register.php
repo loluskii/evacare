@@ -1,3 +1,27 @@
+<?php
+require 'config.php';
+$succ = "";
+$err = "";
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $first_name = $_POST["firstname"];
+    $sur_name = $_POST["surname"];
+    $email = $_POST["email"];
+    $pass_word = $_POST["pass"];
+    $phone_number = $_POST["number"];
+
+    $query = "INSERT INTO users (first_name, sur_name, email, pass_word, phone_number) VALUES('$first_name', '$sur_name','$email','$pass_word','$phone_number')";
+    $sql = mysqli_query($db, $query) or die(mysqli_error($db));
+
+    if ($sql) {
+        $succ = "Registration Successful! <a href='login.php' >Proceed to login</a>";
+    } else {
+        $err = "An Error Occured. Please try again.";
+    }
+}
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,14 +52,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item mr-4 text-dark">
-                    <a class="nav-link" href="#">About Us</a>
+                <li class="nav-item mr-3 text-dark">
+                    <a href="tel://2349000500000" class="nav-link"><i class="fa fa-phone "></i>+234 9000500000</a>
                 </li>
-                <!-- <li class="nav-item mr-4 text-dark">
-                    <a class="nav-link" href="">Contact</a>
-                </li> -->
-                <li class="nav-item mr-4 text-dark">
-                    <a class="nav-link" href="login.php">Login/Register</a>
+                <li class="nav-item mr-3 text-dark">
+                    <a href="mailto:" class="nav-link"> <i class="fa fa-envelope"></i> support@evacare.com.ng</a>
                 </li>
             </ul>
         </div>
@@ -47,7 +68,7 @@
                 <div class="row h-100 align-items-center">
                     <div class="col-12 text-center">
                         <div class="text-center">
-                            <form method="POST" action="reg.php" class="col-md-6 mx-auto p-3">
+                            <form method="POST" action="register.php" class="col-md-6 mx-auto p-3">
                                 <h1 class="text-center">Login Page</h1>
                                 <hr class="col-md-5 mx-auto">
                                 <div class="container">
@@ -69,9 +90,10 @@
                                         <input type="password" placeholder="Enter password" class="form-control mb-4" name="pass" id="name" required>
                                         <br>
                                         <input type="submit" value="Sign Up" class="btn btn-block btn-xs " style="background-color: rgb(227, 165, 119)">
-
+                                        <p class="mb-0 mt-2 text-dark"><?php echo $succ; ?></p>
+                                        <p class="mb-0 mt-2 text-danger"><?php echo $err; ?></p>
                                         <div class="col-md-6 mx-auto mt-3 text-center">
-                                            <p class="text-center"><a href="login.html" class="text-dark mr-4 text-center">Already have an account? Log
+                                            <p class="text-center"><a href="login.php" class="text-dark mr-4 text-center">Already have an account? Log
                                                     In</a>
                                             </p>
                                         </div>
